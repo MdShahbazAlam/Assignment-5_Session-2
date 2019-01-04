@@ -1,0 +1,32 @@
+Assignment-5_Session-2
+
+Problem Statement
+
+1. States = rownames(USArrests)
+Get states name with ‘w’.
+Get states name with ‘W’.
+
+Answer-
+# Get states names with 'w'.
+States = rownames(USArrests)
+States[grep("w", States)]
+
+#Get states names with 'W'.
+States = rownames(USArrests)
+States[grep("W", States)]
+
+2. Prepare a histogram of the number of the characters in each US state.
+
+Answer-
+States <- rownames(USArrests)
+No_of_Char <- nchar(States)
+
+df <- data.frame(States, No_of_Char)
+
+hist(df$No_of_Char, breaks = 10, freq = NULL, include.lowest = TRUE,
+     main = "Histogram Of Characters In Each US States", 
+     xlab = "Number Of Characters In Each State",
+     ylab = "Frequency",
+     axes = TRUE,
+     col = "Grey",
+     border = "Blue")
